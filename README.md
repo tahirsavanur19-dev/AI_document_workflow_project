@@ -53,7 +53,7 @@ git clone https://github.com/tahirsavanur19-dev/AI_document_workflow_project.git
 
 ## 2. Move into project folder
 ```bash
-cd Multi-Agent_Workflow_Automation_System_Using_AI
+cd AI_Document_Workflow_Project
 ```
 
 ## 3. Install dependencies
