@@ -121,7 +121,7 @@ Improved OCR accuracy
 ## RESULT PAGE
 ![RESULT](https://github.com/user-attachments/assets/43255d0e-4ce9-46b8-a3b5-4f67c456301a)
 
-## FRUAD ANALYTICS PAGE
+## FRAUD ANALYTICS PAGE
 ![ANALYTICS](https://github.com/user-attachments/assets/9da44b74-4186-4810-a395-a6165c0fac40)
 
 ---
