@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Fraud Detection Result</title>
+
+<style>
+
+body{
+font-family:Arial, sans-serif;
+background:#f4f6f9;
+margin:0;
+}
+
+/* Navbar */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#222;
+color:white;
+padding:15px 40px;
+}
+
+.nav-buttons a{
+text-decoration:none;
+margin-left:10px;
+}
+
+.nav-buttons button{
+padding:10px 20px;
+border:none;
+border-radius:6px;
+background:#007bff;
+color:white;
+cursor:pointer;
+}
+
+/* Back Button */
+
+.back-container{
+text-align:left;
+padding:15px 40px;
+}
+
+.back-btn{
+padding:8px 18px;
+background:#444;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+}
+
+.back-btn:hover{
+background:black;
+}
+
+/* Main Container */
+
+.container{
+background:white;
+padding:25px;
+border-radius:10px;
+width:70%;
+margin:30px auto;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Result Box */
+
+.result-box{
+padding:15px;
+font-weight:bold;
+font-size:18px;
+margin-bottom:20px;
+border:2px solid;
+border-radius:8px;
+}
+
+.green{
+color:green;
+border-color:green;
+}
+
+.orange{
+color:orange;
+border-color:orange;
+}
+
+.red{
+color:red;
+border-color:red;
+}
+
+/* Text box */
+
+.text-box{
+background:#f8f8f8;
+padding:15px;
+border-radius:8px;
+white-space:pre-wrap;
+max-height:300px;
+overflow-y:auto;
+border:1px solid #ddd;
+}
+
+/* ML box */
+
+.ml-box{
+background:#eef3ff;
+padding:15px;
+border-radius:8px;
+border:1px solid #4a6cf7;
+margin-bottom:20px;
+}
+
+.download-btn{
+padding:12px 25px;
+background:red;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<div class="navbar">
+
+<h2>AI Workflow System</h2>
+
+<div class="nav-buttons">
+
+<a href="/upload"><button>Upload</button></a>
+
+<a href="/history"><button>History</button></a>
+
+<a href="/analytics"><button>Analytics</button></a>
+
+<a href="/logout"><button style="background:red;">Logout</button></a>
+
+</div>
+
+</div>
+
+<!-- Back Button -->
+
+<div class="back-container">
+<button class="back-btn" onclick="history.back()">⬅ Back</button>
+</div>
+
+<div class="container">
+
+<h2>OCR Extraction Result</h2>
+
+<h3>Fraud Detection Result:</h3>
+
+<div class="result-box {{ risk_color }}">
+{{ risk_level }} <br><br>
+Risk Score: {{ risk_score }} / {{ total_keywords }}
+</div>
+
+<!-- ML Prediction -->
+
+<h3>ML Prediction:</h3>
+
+<div class="ml-box">
+Prediction: <strong>{{ ml_prediction }}</strong><br><br>
+Confidence: <strong>{{ ml_probability }}%</strong>
+</div>
+
+<!-- Detected Keywords -->
+
+<h3>Detected Suspicious Keywords:</h3>
+
+{% if matched_keywords %}
+
+<ul>
+{% for word in matched_keywords %}
+<li style="color:red;font-weight:bold;">
+{{ word }}
+</li>
+{% endfor %}
+</ul>
+
+{% else %}
+
+<p>No suspicious keywords detected.</p>
+
+{% endif %}
+
+<!-- Extracted Text -->
+
+<h3>Extracted Text:</h3>
+
+<div class="text-box">
+{{ extracted_text | safe }}
+</div>
+
+<br>
+
+<a href="/download_report">
+<button class="download-btn">Download Report</button>
+</a>
+
+</div>
+
+</body>
+</html>
