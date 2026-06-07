@@ -48,7 +48,7 @@ The system also includes a workflow automation approach where different componen
 
 ## 1. Clone the repository
 ```bash
-git clone https://github.com/tahirsavanur19-dev/Multi-Agent_Workflow_Automation_System_Using_AI.git
+git clone https://github.com/tahirsavanur19-dev/AI_document_workflow_project.git
 ```
 
 ## 2. Move into project folder
